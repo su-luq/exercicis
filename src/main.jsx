@@ -10,10 +10,11 @@ import Productos from './componentes/Productos'
 ReactDOM.render(
   <BrowserRouter>
       <Routes>
-      <Route path="/" element={ <Home></Home>} />
-      <Route path="/facturas" element={ <Facturas></Facturas>} />
-      <Route path="/clientes" element={ <Clientes></Clientes>} />
-      <Route path="/productos" element={ <Productos></Productos>} />
+        <Route path="/" element={ <Home></Home>}>
+          <Route path="/facturas" element={ <Facturas></Facturas>}></Route>
+          <Route path="/clientes" element={ <Clientes></Clientes>}></Route>
+          <Route path="/productos" element={ <Productos></Productos>}></Route>
+        </Route>
       </Routes>
   </BrowserRouter>,
   document.getElementById('root')
