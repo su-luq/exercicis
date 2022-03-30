@@ -8,6 +8,7 @@ export default function Header() {
             <li className='list-group-item gx-5 border-0'><Link to="/clientes">Clientes</Link></li>
             <li className='list-group-item gx-5 border-0'><Link to="/productos">Productos</Link></li>
             <li className='list-group-item gx-5 border-0'><Link to="/facturas">Facturas</Link></li>
+            <li className='list-group-item gx-5 border-0'><Link to="/eth">Eth</Link></li>
         </ul>
     </header>
   )
