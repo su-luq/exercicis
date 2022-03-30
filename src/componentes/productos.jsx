@@ -17,7 +17,26 @@ export default function ListaProductos() {
   }
   return (
     <div>
-      {JSON.stringify(data)}
+      {/*JSON.stringify(data.data[0])*/}
+      <h1>Productos Actuales</h1>
+      <table className="table">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Precio</th>
+          </tr>
+        </thead>
+        <tbody>
+          {data.data.map(producto => (
+            <tr key={producto.product_id}>
+              <td className='text-center'>{producto.product_id}</td>
+              <td>{producto.product_name}</td>
+              <td className='text-end'>{producto.unit_price}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   )
 }
