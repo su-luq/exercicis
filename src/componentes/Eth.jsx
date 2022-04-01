@@ -1,12 +1,14 @@
 const { ethereum } = window;
 import React from 'react';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { ethers } from 'ethers';
 
 export default function Eth() {
 
   const [cuenta, setCuenta] = React.useState(null);
   const [balance, setBalance] = React.useState(null);
+
+  // agafem el compte de l'usuari
 
   useEffect(() => { 
     ethereum && ethereum.request({ method: 'eth_requestAccounts' }).then(i => {
@@ -19,6 +21,7 @@ export default function Eth() {
     });
   }, [])
   
+  // Agafem el saldo del del compte
   useEffect(() => {
     if (cuenta) {
       const provider = new ethers.providers.Web3Provider(ethereum, "any" );
@@ -34,7 +37,7 @@ export default function Eth() {
       {
         cuenta && <div>
           <h2>{cuenta}</h2>
-          <h2>{balance}</h2>
+          <p>{balance}</p>
         </div>
       }
     </div>
